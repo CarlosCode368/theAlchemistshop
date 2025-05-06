@@ -71,7 +71,7 @@ public class Store {
                     System.out.println("Exiting the shop...");
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("Invalid option. Please try again!");
             }
         }
 
