@@ -213,7 +213,7 @@ public class Crafting {
        }
         if (brewedPotion != null) {
             System.out.println("\n" + brewedPotion.getColoredName()+ " crafted successfully!");
-            potionBags.addPotion(brewedPotion);
+            PotionBags.addPotion(brewedPotion);
         } else {
             System.out.println("\nNo known potion was crafted.");
         }

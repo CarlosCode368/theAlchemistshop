@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class potionBags {
+public class PotionBags {
    private static List<PotionPrice>potions=new ArrayList<>();
 
    private static final Map<String,List<String>>potionRecipes=new HashMap<>();

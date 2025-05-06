@@ -4,7 +4,7 @@ public class EmpowerPotions {
         //so what is better two greater potions to create a greatest, or only 3 potions of the same type to create greatest?
         System.out.println("Welcome to your Empowering Altar!");
 
-        potionBags.openPotionBags();
+        PotionBags.openPotionBags();
 
         System.out.println("Combine two of the same to enhance its power! (Choose letter of the potion");
         String potionChoice = scanner.nextLine().trim().toUpperCase();
@@ -15,13 +15,13 @@ public class EmpowerPotions {
         }
 
         char choiceChar = potionChoice.charAt(0);
-        PotionPrice potionToEmpower = potionBags.getPotionFromLetter(choiceChar);
+        PotionPrice potionToEmpower = PotionBags.getPotionFromLetter(choiceChar);
 
         if (potionToEmpower == null) {
             System.out.println("Invalid rune.Try again.");
             return;
         }
-        int potionCount = potionBags.getPotionCount(potionToEmpower);
+        int potionCount = PotionBags.getPotionCount(potionToEmpower);
         if (potionCount < 2) {
             System.out.println("You don't have two of the same potion...");
             return;
@@ -53,7 +53,7 @@ public class EmpowerPotions {
             return;
         }
 
-        potionBags.removePotion(potionToEmpower, 2);
+        PotionBags.removePotion(potionToEmpower, 2);
 
         System.out.println("\nThe altar trembles as arcane energy empowers the potion...");
         try {
@@ -67,7 +67,7 @@ public class EmpowerPotions {
             return;
         }
         empoweredPotion = new PotionPrice(newName, potionToEmpower.getIngredients(), potionToEmpower.getSchool());
-                potionBags.addPotion(empoweredPotion);
+                PotionBags.addPotion(empoweredPotion);
         System.out.println("You have successfully empowered the " + potionToEmpower + " into a " + empoweredPotion + "!");
     }
 }

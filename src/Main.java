@@ -11,6 +11,9 @@ public class Main {
         int gold = 2000; //I'll change this later, user should start with 100 gold
         Inventory inventory = new Inventory();
         Crafting crafting = new Crafting();
+        Store store=new Store();
+        PotionBags potionBags =new PotionBags();
+        new Thread(store::startCustomerRotation).start();
 
 
         while (alchemistName.trim().isEmpty()) {
@@ -33,7 +36,7 @@ public class Main {
                 File taskFile = new File("alchemyshopList.txt");
                 // M Summon Materials
                 // C Craft Potions
-                // E Empower Potions
+                // P Empower Potions
                 // S Sell Potions
                 // R Raw Materials
                 // B Potion Bags
@@ -67,6 +70,11 @@ public class Main {
                 case "P":
                     EmpowerPotions.empowerPotion(scanner);
                     break;
+
+                case "S":
+                    store.interactWithCustomer(scanner,potionBags);
+                    break;
+
                 case "R":
                     inventory.displayRawMaterialsWithLetters();
 
@@ -78,7 +86,7 @@ public class Main {
                     }
                     break;
                 case "B":
-                    potionBags.openPotionBags();
+                    PotionBags.openPotionBags();
                     String exitInputB = "";
                     while (!exitInputB.equalsIgnoreCase("x")) {
                         System.out.println("\nType X to return to your main tasks");
