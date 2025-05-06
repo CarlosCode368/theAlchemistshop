@@ -48,10 +48,13 @@ public class PotionPrice {
     }
 
     public int getSellPrice() {
+
         int cost = getCost();
-        if (name.startsWith("Greater")) {
-            return cost * 2;
-        } else {
+        if (name.startsWith("Greatest")) {
+            return (int) (cost * 9.4);
+        } else if (name.startsWith("Greater")) {
+            return(int) (cost * 3.2);
+        }else{
             return (int) (cost * 1.5);
         }
     }
