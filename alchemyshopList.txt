@@ -1,0 +1,7 @@
+1 Summon Materials
+2 Craft Potions
+3 Mixing Potions
+4 Sell Potions
+5 Raw Materials
+6 Potion Bags
+7 Exit shop (End game)
