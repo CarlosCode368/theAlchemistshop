@@ -26,8 +26,22 @@ public class EmpowerPotions {
             System.out.println("You don't have two of the same potion...");
             return;
         }
-        PotionPrice empoweredPotion = new PotionPrice("Greater " + potionToEmpower.getName(),potionToEmpower.getIngredients(),potionToEmpower.getSchool());
+        int baseCost = potionToEmpower.getCost();
+        String newName;
+        int newCost = 0;
+        PotionPrice empoweredPotion=null;
 
+        if (potionToEmpower.getName().startsWith("Greater")) {
+            newName = "Greatest " + potionToEmpower.getName().replaceFirst("Greater ", "");
+            newCost = baseCost * 2;
+        } else if (potionToEmpower.getName().startsWith("Greatest")) {
+            System.out.println("You can't empower this potion any further.");
+            return;
+        } else {
+            newName = "Greater " + potionToEmpower.getName();
+            newCost = baseCost * 2;
+        }
+        //START EMPOWERING
         System.out.print("\nWould you like to proceed with the empowering ritual? (Y/N): ");
         String confirm = scanner.nextLine().trim().toUpperCase();
 
@@ -47,15 +61,15 @@ public class EmpowerPotions {
                 System.out.println(i + "...");
                 Thread.sleep(1000);
             }
-        }catch(InterruptedException e){
-                Thread.currentThread().interrupt();
-                System.out.println("The empowering ritual was interrupted.");
-                return;
-            }
-            potionBags.addPotion(empoweredPotion);
-            System.out.println("You have successfully empowered the " + potionToEmpower + " into a" + empoweredPotion + "!");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("The empowering ritual was interrupted.");
+            return;
         }
+        empoweredPotion = new PotionPrice(newName, potionToEmpower.getIngredients(), potionToEmpower.getSchool());
+                potionBags.addPotion(empoweredPotion);
+        System.out.println("You have successfully empowered the " + potionToEmpower + " into a " + empoweredPotion + "!");
     }
-
+}
 
 

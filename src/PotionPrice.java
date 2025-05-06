@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class PotionPrice {
     private String name;
@@ -61,5 +62,19 @@ public class PotionPrice {
     @Override
     public String toString(){
         return name+" (Sell Price: "+getSellPrice()+" gold)";
+    }
+    @Override
+    public boolean equals(Object o){
+        if(this==o)return true;
+        if(!(o instanceof PotionPrice))return false;
+
+        PotionPrice that=(PotionPrice)o;
+        return name.equals(that.name)&&
+                ingredients.equals(that.ingredients)&&
+                school==that.school;
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(name,ingredients,school);
     }
 }
