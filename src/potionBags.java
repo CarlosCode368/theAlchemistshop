@@ -39,7 +39,7 @@ public class potionBags {
             for(int i=0;i<potions.size();i++){
                 PotionPrice potion=potions.get(i);
                 char letter=(char)('A'+i);
-                System.out.println(letter +", "+potion.getColoredName());
+                System.out.println(letter +", "+potion.getColoredName()+"  (Sell Price: "+potion.getSellPrice()+" gold)");
             }
         }
     }
