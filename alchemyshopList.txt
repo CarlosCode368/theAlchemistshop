@@ -1,7 +1,7 @@
-1 Summon Materials
-2 Craft Potions
-3 Mixing Potions
-4 Sell Potions
-5 Raw Materials
-6 Potion Bags
-7 Exit shop (End game)
+M Summon Materials
+C Craft Potions
+P Empower Potions
+S Sell Potions
+R Raw Materials
+B Potion Bags
+X Exit shop (End game)

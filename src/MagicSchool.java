@@ -4,6 +4,7 @@ public enum MagicSchool{
     NATURE("\u001B[32m");
 
     private final String colorCode;
+    public static final String RESET_CODE="\u001B[0m";
 
     MagicSchool(String colorCode){
         this.colorCode=colorCode;

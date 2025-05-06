@@ -1,46 +1,46 @@
-Potion of Healing
-Potion of Extinction
-Potion of Longevity
-Potion of Disaster
-Potion of Ruin
-Potion of Seasons
-Potion of Fertility
-Potion of Life
-Potion of Infection
-Potion of Petrification
-Potion of Transformation
-Potion of Rebirth
-Potion of Crows
-Potion of Strength 
-Potion of Deception
-Potion of Grief
-Potion of Love
-Potion of Divinity
-Potion of Agility
-Potion of Wisdom
-Potion of Stars
-Potion of Purification
-Potion of Godhood
-Potion of Justice
-Potion of Destruction
-Potion of Demons
-Potion of Chaos
-Potion of Sickness
-Potion of Disintegration
-Potion of Passion
-Potion of Darkness
-Potion of Uncertainty
-Potion of Decay
-Potion of Zombification
-Potion of Specters
-Potion of Mana
-Potion of Coldness
-Potion of Winter
-Potion of Frostbite
-Potion of Bone Dust
-Potion of Putrefaction
-Potion of Corruption
-Potion of Hallucination
-Potion of Mutation
-Potion of Curse
+Potion of Healing=Aloe Vera, Aloe Vera ,Crystal Vial
+Potion of Extinction=Aloe Vera, Petrified Flower, Crystal Vial
+Potion of Longevity=Aloe Vera, Essence of Light, Crystal Vial
+Potion of Disaster=Aloe Vera,Essence of Fire, Crystal Vial
+Potion of Ruin=Aloe Vera, Essence of Shadow, Crystal Vial
+Potion of Seasons=Aloe Vera, Essence of Frost,Crystal Vial
+Potion of Fertility=Aloe Vera,Forest Mushroom, Crystal Vial
+Potion of Life=Aloe Vera, Skull, Crystal Vial
+Potion of Infection=Aloe Vera, Blood Vein, Crystal Vial
+Potion of Petrification=Petrified Flower, Petrified Flower, Crystal Vial
+Potion of Transformation=Petrified Flower, Essence of Light, Crystal Vial
+Potion of Rebirth=Petrified Flower, Essence of Fire, Crystal Vial
+Potion of Crows=Petrified Flower,Essence of Shadow, Crystal Vial
+Potion of Strength=Petrified Flower, Essence of Frost, Crystal Vial
+Potion of Deception=Petrified Flower, Forest Mushroom, Crystal Vial
+Potion of Grief=Petrified Flower, Skull, Crystal Vial
+Potion of Love=Petrified Flower, Blood Vein, Crystal Vial
+Potion of Divinity=Essence of Light, Essence of Light, Crystal Vial
+Potion of Agility=Essence of Light, Essence of Fire, Crystal Vial
+Potion of Wisdom=Essence of Light, Essence of Shadow, Crystal Vial
+Potion of Stars=Essence of Light, Essence of Frost, Crystal Vial
+Potion of Purification=Essence of Light, Forest Mushroom, Crystal Vial
+Potion of Godhood=Essence of Light, Skull,Crystal Vial
+Potion of Justice=Essence of Light, Blood Vein, Crystal Vial
+Potion of Destruction=Essence of Fire, Essence of Fire,Crystal Vial
+Potion of Demons=Essence of Fire, Essence of Shadow,Crystal Vial
+Potion of Chaos=Essence of Fire, Essence of Frost,Crystal Vial
+Potion of Sickness=Essence of Fire, Forest Mushroom,Crystal Vial
+Potion of Disintegration=Essence of Fire, Skull, Crystal Vial
+Potion of Passion=Essence of Fire, Blood Vein, Crystal Vial
+Potion of Darkness=Essence of Shadow,Essence of Shadow,Crystal Vial
+Potion of Uncertainty=Essence of Shadow, Essence of Frost, Crystal Vial
+Potion of Decay=Essence of Shadow, Forest Mushroom, Crystal Vial
+Potion of Zombie=Essence of Shadow, Skull, Crystal Vial
+Potion of Specters=Essence of Shadow, Blood Vein, Crystal Vial
+Potion of Mana=Essence of Frost, Essence of Frost,Crystal Vial
+Potion of Coldness=Essence of Frost, Skull, Crystal Vial
+Potion of Winter=Essence of Frost, Forest Mushroom, Crystal Vial
+Potion of Frostbite=Essence of Frost, Blood Vein, Crystal Vial
+Potion of Bone Dust=Skull, Skull, Crystal Vial
+Potion of Putrefaction=Skull, Forest Mushroom, Crystal Vial
+Potion of Corruption=Skull, Blood Vein, Crystal Vial
+Potion of Hallucination=Forest Mushroom, Forest Mushroom,Crystal Vial
+Potion of Mutation=Forest Mushroom, Blood Vein, Crystal Vial
+Potion of Curse=Blood Vein, Blood Vein,Crystal Vial
 

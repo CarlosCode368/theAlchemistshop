@@ -1,12 +1,10 @@
-Welcome to The Portal, here you will summon and buy any materials you need. 
-
-1 Mandrake Root
-2 Petrified Flower 
-3 Essence of Snow
-4 Essence of Shadow
-5 Essence of Fire
-6 Essence of Light
-7 Crystal Vial
-8 Skull
-9 Aloe Vera
-10 Forest Mushroom 
+Blood Vein,15
+Petrified Flower, 40
+Essence of Frost, 20
+Essence of Shadow, 20
+Essence of Fire, 20
+Essence of Light, 20
+Crystal Vial, 10
+Skull, 60
+Aloe Vera, 4
+Forest Mushroom, 8
