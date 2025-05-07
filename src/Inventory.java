@@ -13,6 +13,8 @@ public class Inventory {
         potions = new HashMap<>();
         rawMaterials = new HashMap<>();
         itemLetters = new HashMap<>();
+
+        rawMaterials.put("Crystal Vial", 3);  //Player starts with 3 crystal vials in case he forgets to by at the start
         updateItemLetters();  // Initialize the letters for items
     }
 
