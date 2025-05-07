@@ -1,80 +1,71 @@
+
 import java.util.Scanner;
 
 public class Store {
-    private CustomerManager customerManager;
+    private final CustomerManager customerManager;
     private Customer currentCustomer;
+    private final Scanner scanner = new Scanner(System.in);
+    private final Inventory inventory;
 
-    public Store() {
-        customerManager = new CustomerManager();
+    public Store(Inventory inventory) {
+        this.inventory=inventory;
+        this.customerManager = new CustomerManager();
+
     }
 
-    // Customer rotation method in a background thread
-    public void startCustomerRotation() {
+    public void serveCustomers() {
         while (true) {
-            try {
-                // Sleep for 30 seconds before the next customer
-                Thread.sleep(30000);  // 30 seconds
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            // Get a random customer after every 30 seconds
             currentCustomer = customerManager.getRandomCustomer();
-        }
-    }
+            System.out.println(currentCustomer.getName() + " enters your shop.");
+            System.out.println(currentCustomer.getName() + " wants a potion from the " + currentCustomer.getRequestedSchool().getColorCode() + currentCustomer.getRequestedSchool().name() + MagicSchool.RESET_CODE + " school.");
 
-    // Method for interacting with a customer (only when the player chooses to sell potions)
-    public void interactWithCustomer(Scanner scanner, PotionBags potionBags) {
-        if (currentCustomer == null) {
-            System.out.println("No customers right now.");
-            return;
-        }
+            PotionBags.openPotionBags();
 
-        // Display the current customer info
-        System.out.println("New customer: " + currentCustomer.getName() + " requests a potion from the " + currentCustomer.getRequestedSchool() + " school.");
-        System.out.println("Do you want to sell a potion to " + currentCustomer.getName() + "? (Y/N)");
 
-        // Wait for player input to interact with the customer
-        String input = scanner.nextLine().toUpperCase();
+            System.out.println("Type the letter of the potion to offer(or skip to ignore customer, or 'X' to return to your main tasks):");
+            String input = scanner.nextLine().toUpperCase();
 
-        if (input.equals("Y")) {
-            // You can add the logic to check potions based on the magic school requested
-            System.out.println("You can sell potions to " + currentCustomer.getName());
-        } else {
-            System.out.println("Customer " + currentCustomer.getName() + " leaves.");
-        }
-    }
-
-    // Main method to run the program
-    public static void main(String[] args) {
-        Store store = new Store();
-        Scanner scanner = new Scanner(System.in);
-        PotionBags potionBags = new PotionBags();  // Create an instance of PotionBags
-
-        // Start the customer rotation in a background thread
-        new Thread(store::startCustomerRotation).start();
-
-        // Main loop for interacting with the user
-        boolean isRunning = true;
-        while (isRunning) {
-            System.out.println("\nWhat would you like to do?");
-            System.out.println("1. Interact with customer");
-            System.out.println("2. Exit");
-            String choice = scanner.nextLine();
-
-            switch (choice) {
-                case "1":
-                    store.interactWithCustomer(scanner, potionBags);  // Interact with customer when selected
-                    break;
-                case "2":
-                    isRunning = false;
-                    System.out.println("Exiting the shop...");
-                    break;
-                default:
-                    System.out.println("Invalid option. Please try again!");
+            if(input.equals("X")){
+                System.out.println("Returning to main menu...");
+                return;
             }
-        }
 
-        scanner.close();
+            if (input.equalsIgnoreCase("skip")) {
+                System.out.println(currentCustomer.getName() + " leaves disappointed.");
+            } else if (input.length() == 1 && Character.isLetter(input.charAt(0))) {
+                PotionPrice selectedPotion = PotionBags.getPotionFromLetter(input.charAt(0));
+                if (selectedPotion != null && selectedPotion.getSchool() == currentCustomer.getRequestedSchool()) {
+
+                    System.out.println("Handing over the potion");
+                    for(int i=0; i<3;i++){
+                        try{
+                            Thread.sleep(1000);
+                        }catch(InterruptedException e){
+                            Thread.currentThread().interrupt();
+                        }
+                        System.out.println(".");
+                    }
+                    System.out.println();
+
+                    PotionBags.removePotion(selectedPotion, 1);
+                    int sellPrice=selectedPotion.getSellPrice();
+                    inventory.addGold(sellPrice);
+
+                    System.out.println(currentCustomer.getName() + " :Thanks! Here's your gold.\"");
+                    System.out.println("You earned"+sellPrice+"gold. Total gold: "+inventory.getGold());
+
+                } else {
+                    System.out.println(currentCustomer.getName() + ":\"I don't want that potion!\"");
+                }
+            } else {
+                System.out.println("Invalid input.");
+            }
+            System.out.println("\n---A new customer enters...---\n");
+        }
     }
 }
+
+
+
+
+

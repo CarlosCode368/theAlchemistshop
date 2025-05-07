@@ -32,6 +32,9 @@ public class CustomerManager {
         customers.add(new Customer("Old lady"));
         customers.add(new Customer("Soldier"));
         customers.add(new Customer("Guard"));
+        customers.add(new Customer("Hunter"));
+        customers.add(new Customer("Miner"));
+        customers.add(new Customer("Blacksmith"));
 }
 public Customer getRandomCustomer() {
     Customer customer = customers.get(random.nextInt(customers.size()));

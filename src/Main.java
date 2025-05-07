@@ -5,16 +5,14 @@ import java.io.FileNotFoundException;
 
 
 public class Main {
+
+    private static Inventory inventory=new Inventory(2000);
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String alchemistName = "";
-        int gold = 2000; //I'll change this later, user should start with 100 gold
-        Inventory inventory = new Inventory();
+        Store store=new Store(inventory);
         Crafting crafting = new Crafting();
-        Store store=new Store();
         PotionBags potionBags =new PotionBags();
-        new Thread(store::startCustomerRotation).start();
-
 
         while (alchemistName.trim().isEmpty()) {
             System.out.println("Please enter your alchemist name");
@@ -30,7 +28,7 @@ public class Main {
         boolean isRunning = true;
 
         while (isRunning) {
-            System.out.println("\nWhat would you like to do today?\n You have " + gold + " gold coins.");
+            System.out.println("\nWhat would you like to do today?\n You have " + inventory.getGold() + " gold coins.");
 
             try {
                 File taskFile = new File("alchemyshopList.txt");
@@ -61,7 +59,7 @@ public class Main {
 
             switch (choice) {
                 case "M":
-                    gold = SummoningPortal.summonMaterials(scanner, gold, inventory);
+                    SummoningPortal.summonMaterials(scanner,inventory);
                     break;
                 case "C":
                     crafting.openCraftingMenu(scanner, inventory);
@@ -72,7 +70,7 @@ public class Main {
                     break;
 
                 case "S":
-                    store.interactWithCustomer(scanner,potionBags);
+                    store.serveCustomers();
                     break;
 
                 case "R":
@@ -101,7 +99,7 @@ public class Main {
                 default:
                     System.out.println("Incorrect rune, do you want to blow us up?...");
             }
-            System.out.println("Current gold: " + gold);
+            System.out.println("Current gold: " + inventory.getGold());
         }
     }
 }
