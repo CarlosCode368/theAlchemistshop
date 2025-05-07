@@ -9,13 +9,13 @@ public class PotionPrice {
 
     private static final Map<String, Integer> INGREDIENT_PRICES = Map.of(
             "Blood Vein", 15,
-            "Petrified Flower", 40,
-            "Essence of Frost", 20,
-            "Essence of Shadow", 20,
-            "Essence of Fire", 20,
-            "Essence of Light", 20,
+            "Petrified Flower", 20,
+            "Essence of Frost", 60,
+            "Essence of Shadow", 60,
+            "Essence of Fire", 60,
+            "Essence of Light", 60,
             "Crystal Vial", 10,
-            "Skull", 60,
+            "Skull", 40,
             "Aloe Vera", 4,
             "Forest Mushroom", 8
     );
